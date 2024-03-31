@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mem-chart.fullname" . }}-server
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: {{ include "mem-chart.fullname" . }}-server
+  template:
+    metadata:
+      labels:
+        app: {{ include "mem-chart.fullname" . }}-server
+    spec:
+      containers:
+      - name: mem-server
+        image: abooumair/mem-server:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MONGO_CONNECTION_URL
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "mem-chart.fullname" . }}-mongodb-credentials
+              key: mongo-db
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
