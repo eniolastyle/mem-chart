@@ -4,7 +4,7 @@ metadata:
   name: {{ include "mem-chart.fullname" . }}-client
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: {{ include "mem-chart.fullname" . }}-client
