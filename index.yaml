@@ -3,11 +3,11 @@ entries:
   mem-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-04-02T18:07:29.168878+01:00"
+    created: "2024-04-02T18:08:18.78472+01:00"
     description: A Helm chart for deploying mem-client and mem-server applications
     digest: 30045d48a78357fcb1675989c1ede74dda9b95cdd9dc33de5524bf0e418434b1
     name: mem-chart
     urls:
     - mem-chart-1.0.0.tgz
     version: 1.0.0
-generated: "2024-04-02T18:07:29.167522+01:00"
+generated: "2024-04-02T18:08:18.78329+01:00"
